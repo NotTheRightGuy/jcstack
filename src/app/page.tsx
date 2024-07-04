@@ -1,13 +1,16 @@
 export default function Home() {
   return (
     <div className="p-4">
-      <p>Welcome to the home page!</p>
+      <b>Welcome to JC Stack</b>
+      <p>This will serve as a starting point for your next project or hack</p>
       <br />
       <div>Following are the packages installed with this starter pack</div>
       <ul className="list-inside list-disc">
         <li>Tailwindcss</li>
         <li>Framer Motion</li>
         <li>Recoil</li>
+        <li>Next Auth</li>
+        <li>Prisma</li>
         <li>Shadcn</li>
       </ul>
       <br />
@@ -16,7 +19,7 @@ export default function Home() {
         well
       </div>
       <br />
-      <div>Following npm commands are present</div>
+      <div>Following npm commands are present as well</div>
       <ul className="list-inside list-disc">
         <li>
           <code>npm run lint:check</code> - to check for fix issues
