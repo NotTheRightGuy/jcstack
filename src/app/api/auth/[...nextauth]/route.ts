@@ -19,17 +19,26 @@ const handler = NextAuth({
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: { label: "email", type: "text", placeholder: "" },
+        email: { label: "email", type: "text", placeholder: "" },
         password: { label: "password", type: "password", placeholder: "" },
       },
       async authorize(credentials: any) {
-        return {
-          id: "user1",
-          role: "user", // Add default role
-        };
+        if (credentials.email === "admin" && credentials.password === "admin") {
+          return { id: "admin1", role: "admin" };
+        } else if (
+          credentials.email === "user" &&
+          credentials.password === "user"
+        ) {
+          return { id: "user1", role: "user" };
+        } else {
+          return null;
+        }
       },
     }),
   ],
+  pages: {
+    signIn: "/auth/signin",
+  },
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
