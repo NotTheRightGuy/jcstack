@@ -6,10 +6,9 @@ import { Button } from "./ui/button";
 
 export default function AuthStatus() {
   const session = useSession();
-  console.log(session);
   if (session.status === "loading")
     return (
-      <div className="w-1/3 h-10 bg-slate-500 opacity-15 rounded-xl"></div>
+      <div className="w-1/3 h-10 bg-slate-500 opacity-15 rounded-xl animate-pulse"></div>
     );
   if (session.status === "unauthenticated") {
     return (

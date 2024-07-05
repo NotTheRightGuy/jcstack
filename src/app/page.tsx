@@ -1,5 +1,4 @@
 import AuthStatus from "@/components/AuthStatus";
-
 export default function Home() {
   return (
     <div className="p-4">
@@ -11,6 +10,7 @@ export default function Home() {
         <li>Tailwindcss</li>
         <li>Framer Motion</li>
         <li>Recoil</li>
+        <li>React Query</li>
         <li>
           Next Auth
           <ul className="list-inside list-disc pl-6">

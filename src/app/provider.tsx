@@ -1,6 +1,9 @@
 "use client";
 import { RecoilRoot } from "recoil";
 import { SessionProvider } from "next-auth/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export default function Provider({
   children,
@@ -8,8 +11,10 @@ export default function Provider({
   children: React.ReactNode;
 }>) {
   return (
-    <RecoilRoot>
-      <SessionProvider>{children}</SessionProvider>
-    </RecoilRoot>
+    <QueryClientProvider client={queryClient}>
+      <RecoilRoot>
+        <SessionProvider>{children}</SessionProvider>
+      </RecoilRoot>
+    </QueryClientProvider>
   );
 }
